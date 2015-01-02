@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br" ng-app>
+<html lang="pt-br" ng-app="primeiroApp">
 <head>
   <meta charset="utf-8">
   <title>Primeiro app Angular</title>
@@ -7,9 +7,19 @@
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
 </head>
-<body>
+<body ng-controller="PrimeiroListCtrl">
+  Search: <input ng-model="query">
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+  </select>
 
-  <p>Nada aqui {{'ainda' + '!'}}</p>
-  
+  <ul class="phones">
+    <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
 </body>
 </html>
