@@ -3,7 +3,7 @@ describe('PhoneCat controllers', function() {
   describe('PhoneListCtrl', function(){
     var scope, ctrl;
 
-    beforeEach(module('phonecatApp'));
+    beforeEach(module('primeiroApp'));
 
     beforeEach(inject(function($controller) {
       scope = {};
